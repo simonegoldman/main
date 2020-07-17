@@ -30,38 +30,25 @@
   </script>
 
 
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
 <script>
-  function createCookie(name, value, expires, path, domain) {
-    var cookie = name + "=" + escape(value) + ";";
-
-    if (expires) {
-      // If it's a date
-      if(expires instanceof Date) {
-        // If it isn't a valid date
-        if (isNaN(expires.getTime()))
-         expires = new Date();
-      }
-      else
-        expires = new Date(new Date().getTime() + parseInt(expires) * 1000 * 60 * 60 * 24);
-
-      cookie += "expires=" + expires.toGMTString() + ";";
+document.cookie = 'escaped=%u5317'
+document.cookie = 'default=%E5%8C%97'
+var cookies = Cookies.withConverter({
+  read: function (value, name) {
+    if (name === 'escaped') {
+      return unescape(value)
     }
-
-    if (path)
-      cookie += "path=" + path + ";";
-    if (domain)
-      cookie += "domain=" + domain + ";";
-
-    document.cookie = cookie;
+    // Fall back to default for all other cookies
+    return Cookies.converter.read(value, name)
   }
+})
+cookies.get('escaped') // 北
+cookies.get('default') // 北
+cookies.get() // { escaped: '北', default: '北' }
+</script>
 
-  function getCookie(name) {
-    var regexp = new RegExp("(?:^" + name + "|;\s*"+ name + ")=(.*?)(?:;|$)", "g");
-    var result = regexp.exec(document.cookie);
-    return (result === null) ? null : result[1];
-  }
-
-
+<script>
 //setCookie('myName','value', 3); // update only cookie named, 6 upper case letters, 5 numbers and 2 lowercase
 alert("These are your cookies " + document.cookie ); // show all cookies;
   
