@@ -117,32 +117,30 @@ function uuidv4() {
 alert(uuidv4());*/
 
 
-//aaab1479-c2a8-4d79-96ce-8422cc08bf84
-//spks=372d5712-90c8-4d72-961b-d6a97dd723f0, uqid=cc17aee0-b85d-4232-aa69-2f01ae313f40, _ga=GA1.1.399070506.1595047961, _gid=GA1.1.592542625.159504796
 
-// Assigns unique visitor ID to cookie
-document.cookie = 'spks=' + uuidv4()
-var cookies = Cookies.withConverter({
-  read: function (value, name) {
-    if (name === 'spks') {
-      return unescape(value)
-    }
-    // Fall back to default for all other cookies
-    return Cookies.converter.read(value, name)
-  }
+$.get('https://www.cloudflare.com/cdn-cgi/trace', function(data) {
+    console.log(data)
+    var d = data.split("\n");
+    var ip = d[2];
+    var spksid = ip.substr(3);
+
+    // Assigns IP + unique visitor ID to cookie
+    document.cookie = 'spks=' + spksid + "$$$id" + uuidv4()
+    var cookies = Cookies.withConverter({
+      read: function (value, name) {
+        if (name === 'spks') {
+          return unescape(value)
+        }
+        // Fall back to default for all other cookies
+        return Cookies.converter.read(value, name)
+      }
+    })
 })
-
-function eraseCookie(name) {
-  createCookie(name,"",-1);
-}
-eraseCookie('spks');
-eraseCookie('name');
 
 </script>
 
-
 <script>
-function createCookie(name, value, expires, path, domain) {
+/* function createCookie(name, value, expires, path, domain) {
   var cookie = name + "=" + escape(value) + ";";
 
   if (expires) {
@@ -165,15 +163,10 @@ function createCookie(name, value, expires, path, domain) {
 
   document.cookie = cookie;
 }
-
-
-$.get('https://www.cloudflare.com/cdn-cgi/trace', function(data) {
-    console.log(data)
-    alert(data)
-})
-
+*/
 
 </script>
+
 
 
 <script>
