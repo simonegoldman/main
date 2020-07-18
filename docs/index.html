@@ -21,6 +21,27 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
 
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VQGPKMS7KS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-VQGPKMS7KS');
+  </script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-172963672-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-172963672-1');
+  </script>
+
+
 
   <script>
   window.onload = function()
@@ -55,6 +76,7 @@ function uuidv4() {
     return v.toString(16);
   });
 }
+
 /*document.cookie =
   "theme=" + encodeURIComponent("blue theme") +
   "; max-age=" + 60*60*24*30 +
@@ -110,7 +132,47 @@ var cookies = Cookies.withConverter({
   }
 })
 
-Cookies.get('spks')
+function eraseCookie(name) {
+  createCookie(name,"",-1);
+}
+eraseCookie('spks');
+eraseCookie('name');
+
+</script>
+
+
+<script>
+function createCookie(name, value, expires, path, domain) {
+  var cookie = name + "=" + escape(value) + ";";
+
+  if (expires) {
+    // If it's a date
+    if(expires instanceof Date) {
+      // If it isn't a valid date
+      if (isNaN(expires.getTime()))
+       expires = new Date();
+    }
+    else
+      expires = new Date(new Date().getTime() + parseInt(expires) * 1000 * 60 * 60 * 24);
+
+    cookie += "expires=" + expires.toGMTString() + ";";
+  }
+
+  if (path)
+    cookie += "path=" + path + ";";
+  if (domain)
+    cookie += "domain=" + domain + ";";
+
+  document.cookie = cookie;
+}
+
+
+$.get('https://www.cloudflare.com/cdn-cgi/trace', function(data) {
+    console.log(data)
+    alert(data)
+})
+
+
 </script>
 
 
@@ -128,31 +190,6 @@ alert(cookiesarray);
 // at forum.site.com
 //alert(document.cookie); // has cookie user=John
 </script>
-
-
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VQGPKMS7KS"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-VQGPKMS7KS');
-  </script>
-
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-172963672-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'UA-172963672-1');
-  </script>
-
-
-
-
 
   <style>
     /* fade in on page load */
@@ -292,12 +329,12 @@ li.active, .active .current {
 
       <div id='block'>
       <nav class='navbar'>
-
+<ol>
           <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
        <li class="active"><a href="#home" class="current" id='navshow1'>home</a></li>
         <li><a href="#whatis" class="current" id='navshow2'>what is this site?</a></li>
       <li>  <a href="#test" class="current" id='navshow3'>test</a> </li>
-
+</ol>
       </nav>
 
           <div class="main" id="home">
