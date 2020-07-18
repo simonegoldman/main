@@ -29,10 +29,9 @@
   }
   </script>
 
-
 <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
 <script>
-document.cookie = 'escaped=%u5317'
+/*document.cookie = 'escaped=%u5317'
 document.cookie = 'default=%E5%8C%97'
 var cookies = Cookies.withConverter({
   read: function (value, name) {
@@ -45,16 +44,62 @@ var cookies = Cookies.withConverter({
 })
 cookies.get('escaped') // 北
 cookies.get('default') // 北
-cookies.get() // { escaped: '北', default: '北' }
+cookies.get() // { escaped: '北', default: '北' } */
 </script>
 
 <script>
-//setCookie('myName','value', 3); // update only cookie named, 6 upper case letters, 5 numbers and 2 lowercase
-alert("These are your cookies " + document.cookie ); // show all cookies;
-  
-  console.log(getCookie(name)); // print aurelio
-console.log(getCookie(domain)); // print null
+function uuidv4() {
+  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+    var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+    return v.toString(16);
+  });
+}
+/*document.cookie =
+  "theme=" + encodeURIComponent("blue theme") +
+  "; max-age=" + 60*60*24*30 +
+  "; path=/; domain=thesitewizard.com" +
+  uuidv4() ;*/
 
+function set_cookie (cookie_name, cookie_value, lifespan_in_days, valid_domain )
+{
+  var domain_string = valid_domain ? ("; domain=" + valid_domain) : '' ;
+  document.cookie = cookie_name + "=" + encodeURIComponent(cookie_value) +
+  "; max-age=" + 60 * 60 * 24 * lifespan_in_days +
+  "; path=/" + domain_string +
+  ";" + uuidv4();
+}
+set_cookie("uqid", uuidv4(),1);
+
+function get_cookie (cookie_name)
+{  var cookie_string = document.cookie ;
+  if (cookie_string.length != 0) {
+    var cookie_array = cookie_string.split( '; ' );
+    for (i = 0 ; i < cookie_array.length ; i++) {
+      cookie_value = cookie_array[i].match ( cookie_name + '=(.*)' );
+      if (cookie_value != null) {
+        return decodeURIComponent ( cookie_value[1] ) ;
+      }
+    }
+  }
+  return '' ;
+}
+/*function uuidv4() {
+  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+    var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+    return v.toString(16);
+  });
+}
+alert(uuidv4());*/
+\
+</script>
+
+
+<script>
+//setCookie('myName','value', 3); // update only cookie named, 6 upper case letters, 5 numbers and 2 lowercase
+var cookies = document.cookie
+var cookiesarray = cookies.split(';');
+alert(cookiesarray);
+ // show all cookies;
 //document.cookie = "user=John; domain=site.com"
 // at site.com
 // make the cookie accessible on any subdomain *.site.com:
