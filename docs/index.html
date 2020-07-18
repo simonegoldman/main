@@ -48,6 +48,7 @@ cookies.get() // { escaped: '北', default: '北' } */
 </script>
 
 <script>
+// Creates unique visitor ID
 function uuidv4() {
   return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
     var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
@@ -60,29 +61,31 @@ function uuidv4() {
   "; path=/; domain=thesitewizard.com" +
   uuidv4() ;*/
 
-function set_cookie (cookie_name, cookie_value, lifespan_in_days, valid_domain )
-{
-  var domain_string = valid_domain ? ("; domain=" + valid_domain) : '' ;
-  document.cookie = cookie_name + "=" + encodeURIComponent(cookie_value) +
-  "; max-age=" + 60 * 60 * 24 * lifespan_in_days +
-  "; path=/" + domain_string +
-  ";" + uuidv4();
-}
-set_cookie("uqid", uuidv4(),1);
+  /*function set_cookie (cookie_name, cookie_value, lifespan_in_days, valid_domain )
+  {
+    var domain_string = valid_domain ? ("; domain=" + valid_domain) : '' ;
+    document.cookie = cookie_name + "=" + encodeURIComponent(cookie_value) +
+    "; max-age=" + 60 * 60 * 24 * lifespan_in_days +
+    "; path=/" + domain_string +
+    ";" + uuidv4();
+  }
+  set_cookie("uqid", uuidv4(),1);
 
-function get_cookie (cookie_name)
-{  var cookie_string = document.cookie ;
-  if (cookie_string.length != 0) {
-    var cookie_array = cookie_string.split( '; ' );
-    for (i = 0 ; i < cookie_array.length ; i++) {
-      cookie_value = cookie_array[i].match ( cookie_name + '=(.*)' );
-      if (cookie_value != null) {
-        return decodeURIComponent ( cookie_value[1] ) ;
+  function get_cookie (cookie_name)
+  {  var cookie_string = document.cookie ;
+    if (cookie_string.length != 0) {
+      var cookie_array = cookie_string.split( '; ' );
+      for (i = 0 ; i < cookie_array.length ; i++) {
+        cookie_value = cookie_array[i].match ( cookie_name + '=(.*)' );
+        if (cookie_value != null) {
+          return decodeURIComponent ( cookie_value[1] ) ;
+        }
       }
     }
-  }
-  return '' ;
-}
+    return '' ;
+  }*/
+
+
 /*function uuidv4() {
   return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
     var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
@@ -90,7 +93,24 @@ function get_cookie (cookie_name)
   });
 }
 alert(uuidv4());*/
-\
+
+
+//aaab1479-c2a8-4d79-96ce-8422cc08bf84
+//spks=372d5712-90c8-4d72-961b-d6a97dd723f0, uqid=cc17aee0-b85d-4232-aa69-2f01ae313f40, _ga=GA1.1.399070506.1595047961, _gid=GA1.1.592542625.159504796
+
+// Assigns unique visitor ID to cookie
+document.cookie = 'spks=' + uuidv4()
+var cookies = Cookies.withConverter({
+  read: function (value, name) {
+    if (name === 'spks') {
+      return unescape(value)
+    }
+    // Fall back to default for all other cookies
+    return Cookies.converter.read(value, name)
+  }
+})
+
+Cookies.get('spks')
 </script>
 
 
