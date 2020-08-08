@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en-au">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title> Specks | What is your speck?</title>
+<head>
+
+<!--
+.dP"Y8 88""Yb 888888  dP""b8 88  dP .dP"Y8
+`Ybo." 88__dP 88__   dP   `" 88odP  `Ybo."
+o.`Y8b 88"""  88""   Yb      88"Yb  o.`Y8b
+8bodP' 88     888888  YboodP 88  Yb 8bodP'
+
+This site works best at a minimum resolution of 448px x 453px
+
+specks.com.au by Simone Goldman
+submit feedback at specks.com.au/feedback !!!!! note to self. add this as a page to /docs
+-->
+
+<link rel = "icon" type = "image/png" href = "https://i.ibb.co/YBCfMMb/Untitled-Artwork.png?v=2">
+<!-- For apple devices -->
+<link rel = "apple-touch-icon" type = "image/png" href = "https://i.ibb.co/YBCfMMb/Untitled-Artwork.png"/>
+<!-- Square Windows tiles -->
+<meta name="msapplication-square70x70logo" content="https://i.ibb.co/YBCfMMb/Untitled-Artwork.png"></meta>
+<meta name="msapplication-square150x150logo" content="https://i.ibb.co/YBCfMMb/Untitled-Artwork.png"></meta>
+<meta name="msapplication-square310x310logo" content="https://i.ibb.co/YBCfMMb/Untitled-Artwork.png"></meta>
+<!-- Rectangular Windows tile -->
+<meta name="msapplication-wide310x150logo" content="https://i.ibb.co/YBCfMMb/Untitled-Artwork.png"></meta>
+<!-- Windows tile theme color -->
+<meta name="msapplication-TileColor" content="#e8fffd "></meta>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Gugi|Raleway|Abril+Fatface|Unica+One|Press+Start+2P|Bungee">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VQGPKMS7KS"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-VQGPKMS7KS');
+</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-172963672-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-172963672-1');
+</script>
+
+<script>
+window.onload = function()
+{
+  document.body.className += " loaded";
+  document.querySelector(".main").style.opacity = 1;
+}
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+<script>
+// Creates unique visitor ID
+function uuidv4() {
+  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+    var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+    return v.toString(16);
+  });
+}
+
+$.get('https://www.cloudflare.com/cdn-cgi/trace', function(data) {
+  console.log(data)
+  var d = data.split("\n");
+  var ip = d[2];
+  var spksid = ip.substr(3);
+
+// Assigns IP + unique visitor ID to cookie
+document.cookie = 'spks=' + spksid + "$$$id" + uuidv4()
+var cookies = Cookies.withConverter({
+  read: function (value, name) {
+    if (name === 'spks') {
+      return unescape(value)
+    }
+    // Fall back to default for all other cookies
+    return Cookies.converter.read(value, name)
+  }
+})
+});
+</script>
+
+<script>
+var cookies = document.cookie
+var cookiearray = cookies.split(';');
+</script>
+
+<script>
+gtag('event', 'main page', {
+  'event_category': 'page load',
+  'event_label': 'auto',
+  'value': document.cookie
+});
+</script>
+
+
+<style>
+/* fade in on page load */
+.fadein {
+  opacity: 0;
+  -moz-transition: opacity 3s;
+  -webkit-transition: opacity 3s;
+  -o-transition: opacity 3s;
+  transition: opacity 3;
+}
+
+body.loaded .fadein {
+  opacity: 1;
+}
+
+/* kern text on page load lett sp was 2px*/
+h1 {
+  -webkit-animation: myanim 4s;
+  animation: myanim 4s;
+  text-align: center;
+  font-family: "Press Start 2P";
+  font-size: 20px;
+  transform: scaleY(1.7);
+  letter-spacing: 10px;
+  color: #404040;
+  padding-top: 15px;
+  transition: all 0.5s ease-in-out 0.2s;
+  margin-left: 10px;
+}
+
+h1:hover {
+  opacity: 1;
+  transform: scale(1);
+  transition: all 0.3s ease-in-out 0.1s;
+}
+
+@-webkit-keyframes myanim {
+  0%   { letter-spacing: -5px; } /*-5, 10*/
+  100% { letter-spacing: 10px; }
+}
+
+@keyframes myanim {
+  0%   { letter-spacing: -5px; }
+  100% { letter-spacing: 10px; }
+}
+
+.current, li {
+  color: #404040;
+  font-family: "Raleway";
+  letter-spacing: 1px;
+  text-decoration: none;
+  text-align:center;
+  letter-spacing: 0px;
+  list-style:none;
+  display: inline;
+}
+
+h2 {
+  font-family: "Press Start 2P";
+  font-size: 14px;
+  transform: scaleY(1.7);
+  letter-spacing: 1px;
+}
+
+p {
+  font-family: "Raleway";
+  text-indent: 15px;
+}
+
+.bluebox {
+  background-color:#e8fffd;
+  color: #404040;
+  border: solid #404040;
+  border-width: 0.5px;
+  margin: 12px; /* maybe this */
+  padding: 20px;
+  height: 60vh;
+  text-decoration: none;
+}
+
+h2:first-of-type, p:first-of-type {
+  display: block;
+}
+
+body {
+  margin: 10px;
+  padding: 5px; /*was 20*/
+  height: 80vh;
+  text-decoration: none;
+}
+
+#block {
+  margin-top:50px;
+  text-decoration: none;
+}
+
+html {
+  height: 100%;
+  background-color:#f0f0f0;
+}
+
+.navbar, a {
+  /*color: #404040;*/
+  font-family: "Raleway";
+  font-size: 18px;
+  /*letter-spacing: -1px;*/
+  text-align:center;
+  /*letter-spacing: 0px;*/
+  list-style:none;
+  float: center;
+  /*margin-left: 0px;*/
+  margin-right: 7px;
+  padding-bottom: 10px;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+.current:hover {
+  color: #4532e3;
+  text-shadow: -0.06ex 0 #4532e3, 0.06ex 0 #4532e3;
+}
+
+li.active, .active .current {
+  color: #4532e3;
+  text-shadow: -0.06ex 0 #4532e3, 0.06ex 0 #4532e3;
+}
+
+ol {
+  text-align: center;
+  list-style-position: inside;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: inherit;
+}
+
+ol.text-center > li::before {
+  content: "\A";
+  white-space: pre;
+}
+
+ol.text-center {
+  list-style-position: inside;
+  padding-left: inherit;
+}
+
+.main {
+  opacity:0;
+  transition: 3000ms opacity;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   color: #404040;
+   font-size: 11px;
+   text-align: center;
+   -webkit-user-select: none;
+   -khtml-user-select: none;
+   -moz-user-select: none;
+   -o-user-select: none;
+   user-select: none;
+}
+
+h2 {
+  animation: fadeIn ease 10s;
+  -webkit-animation: fadeIn ease 3s;
+  -moz-animation: fadeIn ease 3s;
+  -o-animation: fadeIn ease 3s;
+  -ms-animation: fadeIn ease 3s;
+}
+
+#user {
+     color: #404040;
+     font-family: "Raleway";
+     align: center;
+  text-align: center;
+  animation: in 4s;
+  -webkit-animation: in 4s;
+  -moz-animation: in 4s;
+  -o-animation: in 4s;
+  -ms-animation: in 4s;
+  letter-spacing: 0px;
+}
+
+@-webkit-keyframes in {
+  0%   { letter-spacing: 1.5px; } /*-5, 10*/
+  100% { letter-spacing: 0px; }
+}
+
+@keyframes in {
+  0%   { letter-spacing: 1.5px; }
+  100% { letter-spacing: 0px; }
+}
+
+</style>
+</head>
+<header>
+  <div class='fadein' id='header'>
+    <h1 id='speckshover' onmouseover="addEventHover();">SPECKS.</h1>
+  </div>
+</header>
+
+<body>
+  <div id='block'>
+    <nav class='navbar'>
+      <ol>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <li class="active"><a href="#home" class="current" id='navshow1' onclick="ga('send', 'event', 'home', 'click');addEventHome();">home</a></li>
+        <li><a href="#whatis" class="current" id='navshow2' onclick="ga('send', 'event', 'what is', 'click');addEventWhatIs();">what is this site?</a></li>
+        <li><a href="#test" class="current" id='navshow3' onclick="ga('send', 'event', 'test', 'click');addEventTest();">test</a> </li>
+      </ol>
+      <script>
+      var homeclicks = 0;
+      var hovers= 0;
+      var whatisclicks= 0;
+
+      function addEventHover() {
+        hovers += 1;
+        if (hovers == 1) {
+          document.getElementById("hovers").style.fontSize = "14px"
+          document.getElementById("hovers").innerHTML= 'You hovered over "SPECKS" once'
+        } else {
+          document.getElementById("hovers").style.fontSize = "14px"
+          document.getElementById("hovers").innerHTML = 'You hovered over "SPECKS" ' + hovers + ' times';
+        }
+      };
+
+      function addEventHome() {
+        homeclicks += 1;
+        if (homeclicks == 1) {
+          document.getElementById("homeclicks").style.fontSize = "14px"
+          document.getElementById("homeclicks").innerHTML= 'You clicked on "home" once'
+        } else {
+          document.getElementById("homeclicks").style.fontSize = "14px"
+          document.getElementById("homeclicks").innerHTML = 'You clicked on "home" ' + homeclicks + ' times';
+        }   };
+
+        function addEventWhatIs() {
+          whatisclicks += 1;
+          if (whatisclicks == 1) {
+            document.getElementById("whatisclicks").style.fontSize = "14px"
+            document.getElementById("whatisclicks").innerHTML= 'You clicked on "what is this site?" once'
+          } else {
+            document.getElementById("whatisclicks").style.fontSize = "14px"
+            document.getElementById("whatisclicks").innerHTML = 'You clicked on "what is this site?" ' + whatisclicks + ' times';
+          }   };
+
+
+
+      </script>
+    </nav>
+    <div class="main" id="home">
+      <div class='bluebox' id='main'>
+        <h2 class='fade-me-in' id='main'> Your speck</h2>
+        <p class='paragraph' id='main'> my g <br></br></p>
+
+
+          <div id="user">
+            Your speck: <br></br>
+            <span id="cookie"></span>
+
+               <script>
+                 $.getJSON('https://geolocation-db.com/json/')
+                    .done (function(location) {
+                       $('#country').html(location.country_name);
+                       $('#state').html(location.state);
+                       $('#city').html(location.city);
+                       $('#latitude').html(location.latitude);
+                       $('#longitude').html(location.longitude);
+                       $('#ip').html(location.IPv4);
+                    });
+               </script>
+
+               <div><b>Country: </b><span id="country"></span></div>
+                  <div><b>State: </b><span id="state"></span></div>
+                  <div><b>City: </b><span id="city"></span></div>
+                  <div><b>Latitude: </b><span id="latitude"></span></div>
+                  <div><b>Longitude: </b><span id="longitude"></span></div>
+                  <div><b>IP: </b><span id="ip"></span></div>
+                  <div><span id='event'><p><a id="hovers"></a></p></span></div>
+                  <div><span id='event'><p><a id="homeclicks"></a></p></span></div>
+                  <div><span id='event'><p><a id="whatisclicks"></a></p></span></div>
+
+
+
+
+
+
+          </div>
+      </div>
+    </div>
+
+    <div class="resume" id="whatis">
+      <div class='bluebox' id='whatis'>
+        <h2 class='fade-me-in' id='main'> what is this be a test</h2>
+        <p class='paragraph'id='main'>sup</p>
+      </div>
+    </div>
+
+    <div class="resume" id="test">
+      <div class='bluebox' id='test'>
+        <h2 class='fade-me-in' id='main'>test</h2>
+        <p class='paragraph' id='main'>tst</p>
+      </div>
+    </div>
+  </div>
+
+
+
+  <footer id='noselect'>
+  <p>Copyright specks.com.au <span id="year"></span></p>
+</footer>
+
+
+
+  <script>
+  $('.main').show()
+  $('.resume').hide()
+  $('a[href^="#"]').on('click', function(event) {
+
+    $('.resume').hide();
+    $('.main').hide();
+    var target = $(this).attr('href');
+    $('.resume'+target).fadeIn(1000);
+    $('.main'+target).fadeIn(1000);
+  });
+  //.toggle() instead of the fadeIns(1000)
+  </script>
+
+  <script>
+ $('li').click(function(){
+    $('li').removeClass("active");
+    $(this).addClass("active");
+  });
+  </script>
+
+  <script>
+      document.getElementById("year").innerHTML = new Date().getFullYear();
+      document.getElementById("cookie").innerHTML = document.cookie;
+  </script>
+</body>
+</html>
