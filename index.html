@@ -1,1 +1,195 @@
-<h>test</h>
+<!DOCTYPE html>
+<html lang="en-au">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title> Test title </title>
+<head>
+<link rel = "icon" type = "image/png" href = "https://ibb.co/bRc1Qqq">
+
+<link rel = "apple-touch-icon" type = "image/png" href = "https://ibb.co/bRc1Qqq"/>
+<!-- Square Windows tiles -->
+<meta name="msapplication-square70x70logo" content="https://ibb.co/bRc1Qqq"></meta>
+<meta name="msapplication-square150x150logo" content="https://ibb.co/bRc1Qqq"></meta>
+<meta name="msapplication-square310x310logo" content="https://ibb.co/bRc1Qqq"></meta>
+<!-- Rectangular Windows tile -->
+<meta name="msapplication-wide310x150logo" content="https://ibb.co/bRc1Qqq"></meta>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Gugi|Raleway|Abril+Fatface|Unica+One|Press+Start+2P|Bungee">
+
+<script data-goatcounter="https://szg.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+
+<script>
+window.onload = function()
+{document.body.className += " loaded";
+document.querySelector("body").style.opacity = 1;
+}
+</script>
+
+<style>
+html {
+  height: 100%;
+  background-color:#f0f0f0;
+}
+
+body, div {
+  text-decoration: none;
+}
+
+/* header fade in on page load */
+body, .fadein {
+  opacity: 0;
+  -moz-transition: opacity 3s;
+  -webkit-transition: opacity 3s;
+  -o-transition: opacity 3s;
+  transition: opacity 3;
+}
+
+body.loaded .fadein {
+  opacity:  1;
+}
+
+h1 {
+  -webkit-animation: myanim 4s;
+  animation: myanim 4s;
+  text-align: center;
+  float: center;
+  font-family: "Press Start 2P";
+  font-size: 15px;
+  color: #404040;
+
+  padding-top: 50px;
+  padding-right: 30px;
+  padding-bottom: 20px;
+  padding-left: 80px;
+
+  transform: scaleY(1.7);
+  letter-spacing: 10px;
+
+  text-overflow:ellipsis;
+    overflow:hidden;
+    display: flex;
+    justify-content: center;
+}
+
+}
+@-webkit-keyframes myanim {
+  0%   { letter-spacing: -5px; }
+  100% { letter-spacing: 10px; }
+}
+
+@keyframes myanim {
+  0%   { letter-spacing: -5px; }
+  100% { letter-spacing: 10px; }
+}
+
+.topnav, a:visited, a:link, a:active {
+  color: #404040;
+  font-family: "Raleway";
+  font-size: 18px;
+  /*letter-spacing: -1px;*/
+  text-align:center;
+  /*letter-spacing: 0px;*/
+  list-style:none;
+  float: center;
+  /*margin-left: 0px;*/
+  margin-right: 7px;
+  padding-bottom: 10px;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  text-decoration: none;
+  letter-spacing: 0px;
+
+
+  padding-top: 20px;
+  padding-right: 30px;
+  padding-bottom: 5px;
+  padding-left: 80px;
+  margin-top: 1px;
+  margin-bottom: 1px;
+  margin-right: 2px;
+  margin-left: 2px;
+}
+
+
+a:hover {
+  color: #4532e3;
+  text-shadow: -0.06ex 0 #4532e3, 0.06ex 0 #4532e3;
+}
+
+#navpad {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.content {
+  padding-top: 5px;
+  padding-bottom: 50px;
+  text-align:centre;
+  float: center;
+
+  padding-right: 30px;
+  padding-left: 30px;
+
+  margin-top: 1px;
+  margin-bottom: 1px;
+  /*
+  margin-right: 2px;
+  margin-left: 2px;
+  */
+}
+
+p {
+  font-size: 17px;
+  font-family: "Raleway";
+  text-decoration: none;
+  color: #404040;
+  text-align:centre;
+  float: center;
+  /*
+  padding-right: 400px;
+  padding-left: 100px;
+  margin-top: 1px;
+  margin-bottom: 1px;
+  */
+  margin-right: 100px;
+  margin-left: 100px;
+
+}
+
+#wrapper {
+    margin-left:auto;
+    margin-right:auto;
+    text-overflow:ellipsis;
+    overflow:hidden;
+    display: flex;
+    justify-content: center;
+}
+
+
+</style>
+</head>
+
+<header>
+  <div class='fadein'>
+    <h1 id="wrapper">bubba</h1>
+  </div>
+</header>
+
+
+<div class="topnav" id="wrapper">
+  <a class="active" href="#home" id='navpad' style="text-decoration:none;">home</a>
+  <a href="#whatis" id='navpad' style="text-decoration:none;">what is this site?</a>
+</div>
+
+<body>
+
+    <div class="content">
+        <h2 class='fadein' id='main'></h2> <!-- maybe i'll put a header here at some point -->
+        <p class='fadein'id='main'>I'm a data analyst, code enthusaist and keen learner, constantly looking to expand my pool of knowledge. My background is particlarly in data analysis and exploration, improving processes and automation. I'm currently working in the health tech space </p>
+    </div>
+
+
+</body>
