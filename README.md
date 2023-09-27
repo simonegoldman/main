@@ -9,16 +9,16 @@ My go-to tools are:
 * Jira & Confluence for project management and docs
 
 ## Some of my portfolio includes:
-### Creating dashboards for internal stakeholders; Data visualisation
+### Created dashboards for internal stakeholders; Data visualisation
   * Certain titles and datapoints have been removed for data privacy reasons
   * Displayed is a replica of original for data privacy reasons
 
-### Creating internal data lineage tool via python in order to assist in uncovering complex logic and dependencies
+### Created internal data lineage tool via python in order to assist in uncovering complex logic and dependencies
   * Certain titles and datapoints have been removed for data privacy reasons
   * Displayed is a replica of original for data privacy reason
 
-### Implementation of ingesting new data into production via python. Working with Engineering team to implement correct intention of 'HICAPS' pill on website
-  * Importing, matching and homogenising data via python in order to display on-site prompts.
+### Ingested new data into production via python; Worked with Engineering team to implement correct implementation of 'HICAPS' indicator on website
+  * Imported, matched and homogenised data via python in order to display on-site prompts.
     
     ![](https://i.ibb.co/4jb6SBP/ezgif-1-6068fc8a9a.gif)
     
