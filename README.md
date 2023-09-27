@@ -11,9 +11,11 @@ My go-to tools are:
 ## Some of my portfolio includes:
 ### Creating dashboards for internal stakeholders; Data visualisation
   * Certain titles and datapoints have been removed for data privacy reasons
+  * Displayed is a replica of original for data privacy reasons
 
 ### Creating internal data lineage tool via python in order to assist in uncovering complex code logic, dependencies and assist with impact assessment
   * Certain titles and datapoints have been removed for data privacy reasons
+  * Displayed is a replica of original for data privacy reason
 
 ### Implementation of ingesting new data into production via python. Working with Engineering team to implement correct intention of 'HICAPS' pill on website
   * Importing, matching and homogenising data via python in order to display on-site prompts.
