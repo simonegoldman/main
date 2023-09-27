@@ -13,7 +13,7 @@ My go-to tools are:
   * Certain titles and datapoints have been removed for data privacy reasons
   * Displayed is a replica of original for data privacy reasons
 
-### Creating internal data lineage tool via python in order to assist in uncovering complex code logic, dependencies and assist with impact assessment
+### Creating internal data lineage tool via python in order to assist in uncovering complex logic and dependencies
   * Certain titles and datapoints have been removed for data privacy reasons
   * Displayed is a replica of original for data privacy reason
 
